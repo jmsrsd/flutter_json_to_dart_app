@@ -1,49 +1,47 @@
 import 'package:flutter/material.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({
+    super.key,
+  });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+      body: Column(
+        children: [
+          SizedBox(
+            width: double.maxFinite,
+            height: 48.0,
+          ),
+          SizedBox(
+            width: double.maxFinite,
+            height: 48.0,
+            child: Row(
+              children: [],
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(
-                context,
-              ).textTheme.headlineMedium,
+          ),
+          Expanded(
+            child: Container(
+              color: Colors.red,
+              child: Center(
+                child: Text(
+                  'Top',
+                ),
+              ),
             ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+          ),
+          Expanded(
+            child: Container(
+              color: Colors.blue,
+              child: Center(
+                child: Text(
+                  'Bottom',
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
