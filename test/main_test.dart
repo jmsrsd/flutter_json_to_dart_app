@@ -17,7 +17,9 @@ class PODO extends Equatable {
     this.prev,
   });
 
-  factory PODO.fromJson(Map<String, dynamic> json) {
+  factory PODO.fromJson(
+    Map<String, dynamic> json,
+  ) {
     return PODO(
       count: json['count'],
       pages: json['pages'],
